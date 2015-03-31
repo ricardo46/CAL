@@ -1,9 +1,6 @@
 #ifndef _GRAPH_H_
 #define _GRAPH_H_
-/*
-#include "nodes.h"
-#include "Links.h"
-*/
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -22,8 +19,8 @@ template <class T>
 class Graph {
 	vector<Nodes<T> *> vertexSet;
 public:
-	vector<Nodes<T> * > getVertexSet() const;
-	int getNumVertex() const;
+	vector<Nodes<T> * > getVertexSet();
+	int getNumVertex();
 	bool addNode(const T &in);
 	bool addEdge(const T &sourc, const T &dest, double w);
 };
@@ -41,6 +38,7 @@ bool Graph<T>::addNode(const T &in){
 	vertexSet.push_back(vertice);
 	return true;
 }
+
 template <class T>
 bool Graph<T>::addEdge(const T &sourc, const T &dest, double w){
 
@@ -63,11 +61,11 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, double w){
 }
 
 template <class T>
-int Graph<T>::getNumVertex() const {
+int Graph<T>::getNumVertex() {
 	return vertexSet.size();
 }
 template <class T>
-vector<Nodes<T> * > Graph<T>::getVertexSet() const {
+vector<Nodes<T> * > Graph<T>::getVertexSet() {
 	return vertexSet;
 }
 
